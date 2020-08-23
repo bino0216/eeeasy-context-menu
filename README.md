@@ -7,3 +7,4 @@ context menu made as easy to use as possible.
 // Just declare
 const ContextMenu = new contextMenu();
 ```
+when you want to use, just use to easy.
