@@ -22,7 +22,8 @@ ContextMenu.addOptions('circles', [
 ])
 
 function contextMenu(v = {
-    allowClassName: 'context-access',
+    // allowClassName: 'context-access',
+    allowAttributeName: 'data-context-access',
     menuWidth: 300, // px
 }) {
     const menuIdName = 'context-menu-el';
@@ -107,7 +108,10 @@ function contextMenu(v = {
     const whenClickedRightMouse = (e) => {
         e.preventDefault();
 
-        const isRightClickeContextAllowedElement = e.srcElement.classList.contains(v.allowClassName);
+        const isRightClickeContextAllowedElement = 
+        v.allowAttributeName == undefined ?
+        e.srcElement.classList.contains(v.allowClassName) :
+        e.srcElement.getAttribute(v.allowAttributeName) !== null;
 
         if(!isRightClickeContextAllowedElement) {
             hideMenu();
