@@ -16,9 +16,18 @@ and all preparations are completed.
 but context-menu does not appear everywhere.
 only a few conditions are needed.
 
-first, decide a condition kind.
+1. decide a condition's kind.
 ```javascript
 const ContextMenu = new contextMenu({
     allowClassName: 'context-access' // it is default status.
+});
+```
+2. if class is cumbersome, use attribute.
+```javascript
+/**
+ * In this case, the above method is ignored.
+ * */
+const ContextMenu = new contextMenu({
+    allowAttributeName: 'data-context-access'
 });
 ```
