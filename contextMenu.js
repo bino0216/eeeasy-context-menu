@@ -5,9 +5,10 @@
  * 
  */
 function ContextMenu(v = {
-    // allowClassName: 'context-access',
-    allowAttributeName: 'data-context-access',
-}) {
+    allowClassName: 'context-access'
+    // allowAttributeName: 'data-context-access',
+})
+{
     const menuIdName = 'context-menu-el';
     let contextMenuElement = undefined; // menu element
     // const CLASS_NAME_WHAT_APPLIED_FOR_CONTEXT_ELEMENT = v.allowClassName;
