@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <style>
+        .square {
+            width: 500px;
+            height: 1500px;
+            background: #000;
+            float: right;
+        }
+    </style>
+    <div class="square context-access"></div>
+
+    <script src="../contextMenu.js"></script>
+    <script>
+        const contextMenu = new ContextMenu();
+        contextMenu.addOptions('square', [
+            ['alert', () => {
+                alert('!');
+            }],
+            ['remove', () => {
+                document.querySelector('.square').outerHTML = 'die';
+            }]
+        ])
+    </script>
+</body>
+</html>

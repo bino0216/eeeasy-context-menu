@@ -5,7 +5,7 @@ context menu made as easy to use as possible.
 
 ```javascript
 // Just declare
-const ContextMenu = new contextMenu();
+const contextMenu = new ContextMenu();
 ```
 if you want to use, just use to easy.
 
@@ -18,14 +18,14 @@ only a few conditions are needed.
 
 1. decide a condition's kind.
 ```javascript
-const ContextMenu = new contextMenu({
+const contextMenu = new ContextMenu({
     allowClassName: 'context-access' // it is default status.
 });
 ```
 2. if class is cumbersome, use attribute.
 ```javascript
 // In this case, the above method is ignored.
-const ContextMenu = new contextMenu({
+const contextMenu = new ContextMenu({
     allowAttributeName: 'data-context-access'
 });
 ```
@@ -40,13 +40,14 @@ Finally, should to add option.
 ```
 
 ```javascript
-const ContextMenu = new contextMenu();
-ContextMenu.addOptions('square', [
+const contextMenu = new ContextMenu();
+contextMenu.addOptions('square', [
+    // optionName, callBack
     ['alert', () => {
         alert('!');
     }],
     ['remove', () => {
         document.querySelector('.square').outerHTML = 'die';
     }]
-])
+]);
 ```

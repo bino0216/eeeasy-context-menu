@@ -4,27 +4,9 @@
  * context menu
  * 
  */
-
-const ContextMenu = new contextMenu();
-ContextMenu.addOptions('square', [
-    ['remove', () => {
-        document.querySelector('.square').outerHTML = '';
-        console.log('square remove !!')
-    }],
-    ['siva', () => {
-        alert('siva')
-    }]
-])
-ContextMenu.addOptions('circles', [
-    ['isCircleSival', () => {
-        console.log('success !!')
-    }]
-])
-
-function contextMenu(v = {
+function ContextMenu(v = {
     // allowClassName: 'context-access',
     allowAttributeName: 'data-context-access',
-    menuWidth: 300, // px
 }) {
     const menuIdName = 'context-menu-el';
     let contextMenuElement = undefined; // menu element
