@@ -31,3 +31,10 @@ const ContextMenu = new contextMenu({
 ```
 
 # add management list
+Finally, should to add option.
+
+```html
+<div class="square context-access"></div>
+<!-- or -->
+<div class="square" data-context-access></div>
+```
