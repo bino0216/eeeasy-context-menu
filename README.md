@@ -12,9 +12,13 @@ if you want to use, just use to easy.
 when you declare new contextMenu object, context menu created body tag's last one.
 and all preparations are completed.
 
+
+
 ## prepare
 but context-menu does not appear everywhere.
 only a few conditions are needed.
+
+
 
 1. decide a condition's kind.
 ```javascript
