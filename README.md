@@ -38,3 +38,15 @@ Finally, should to add option.
 <!-- or -->
 <div class="square" data-context-access></div>
 ```
+
+```javascript
+const ContextMenu = new contextMenu();
+ContextMenu.addOptions('square', [
+    ['alert', () => {
+        alert('!');
+    }],
+    ['remove', () => {
+        document.querySelector('.square').outerHTML = 'die';
+    }]
+])
+```
