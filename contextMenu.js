@@ -3,6 +3,7 @@ export default function ContextMenu(v = {
     // allowAttributeName: 'data-context-access',
 })
 {
+    console.log('sival')
     const menuIdName = 'context-menu-el';
     let contextMenuElement = undefined; // menu element
 
@@ -36,7 +37,6 @@ export default function ContextMenu(v = {
             const OptionClassNameOfElement = ifHaveOptionThenReturnKey();
             if(OptionClassNameOfElement === undefined) return;
 
-            console.log(menuOptionListObject[OptionClassNameOfElement])
             const optionList = menuOptionListObject[OptionClassNameOfElement];
             
             const ul_tag = document.createElement('ul');
@@ -84,19 +84,27 @@ export default function ContextMenu(v = {
     const whenClickedRightMouse = (e) => {
         e.preventDefault();
 
-        const isRightClickeContextAllowedElement = 
-        v.allowAttributeName === undefined ?
-        e.srcElement.classList.contains(v.allowClassName) :
-        e.srcElement.getAttribute(v.allowAttributeName) !== null;
+        function isRightClickedContextAllowedElement(element) {
+            try {
+                return v.allowClassName !== undefined ?
+                element.classList.contains(v.allowClassName) :
+                element.getAttribute(v.allowAttributeName) !== null;
+            } catch(e){}
+        }
+        let clickedElement = e.srcElement;
 
 
-        if(!isRightClickeContextAllowedElement) {
-            hideMenu();
-            return;
+        if(!isRightClickedContextAllowedElement(clickedElement)) {
+            const clickedParentElement = clickedElement.parentNode;
+            if(isRightClickedContextAllowedElement(clickedParentElement))
+                clickedElement = clickedParentElement;
+            else {
+                hideMenu();
+                return;
+            }
         }
 
-
-        setOptionElements(e.srcElement);
+        setOptionElements(clickedElement);
         showMenuInLocation(e.clientX, e.clientY);
     }
 

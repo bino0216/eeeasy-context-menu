@@ -13,8 +13,11 @@
         }
     </style>
     <div class="square context-access"></div>
+    <script src="../contextMenu.js" module></script>
     <script>
-        const contextMenu = new ContextMenu();
+        const contextMenu = new ContextMenu({
+            allowClassName: 'context-access'
+        });
         contextMenu.addOptions('square', [
             ['alert', () => {
                 alert('!');
