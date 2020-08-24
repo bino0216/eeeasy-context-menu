@@ -5,6 +5,7 @@
     display: none;
     overflow: hidden;
     box-shadow: 1px 1px 2px rgb(193 193 193 / 49%);
+    z-index: 10;
 }
 
 #context-menu-el ul {

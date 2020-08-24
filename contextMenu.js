@@ -1,9 +1,3 @@
-/**
- * created by bino 2020-08-23
- * 
- * context menu
- * 
- */
 export default function ContextMenu(v = {
     allowClassName: 'context-access'
     // allowAttributeName: 'data-context-access',
@@ -11,7 +5,6 @@ export default function ContextMenu(v = {
 {
     const menuIdName = 'context-menu-el';
     let contextMenuElement = undefined; // menu element
-    // const CLASS_NAME_WHAT_APPLIED_FOR_CONTEXT_ELEMENT = v.allowClassName;
 
     const menuOptionListObject = {};
 
@@ -40,14 +33,14 @@ export default function ContextMenu(v = {
                     if(clickedElement.classList.contains(key))
                         return key;
             }
-            OptionClassNameOfElement = ifHaveOptionThenReturnKey();
+            const OptionClassNameOfElement = ifHaveOptionThenReturnKey();
+            if(OptionClassNameOfElement === undefined) return;
 
-            if(OptionClassNameOfElement == undefined) return;
-
+            console.log(menuOptionListObject[OptionClassNameOfElement])
             const optionList = menuOptionListObject[OptionClassNameOfElement];
             
             const ul_tag = document.createElement('ul');
-            for(option of optionList) {
+            for(const option of optionList) {
                 const optionName = option[0];
                 const optionFunction = option[1];
 
@@ -92,9 +85,10 @@ export default function ContextMenu(v = {
         e.preventDefault();
 
         const isRightClickeContextAllowedElement = 
-        v.allowAttributeName == undefined ?
+        v.allowAttributeName === undefined ?
         e.srcElement.classList.contains(v.allowClassName) :
         e.srcElement.getAttribute(v.allowAttributeName) !== null;
+
 
         if(!isRightClickeContextAllowedElement) {
             hideMenu();
