@@ -32,7 +32,6 @@ const contextMenu = new ContextMenu({
 ```
 2. if class is cumbersome, use attribute.
 ```javascript
-// In this case, the above method is ignored.
 const contextMenu = new ContextMenu({
     allowAttributeName: 'data-context-access'
 });
