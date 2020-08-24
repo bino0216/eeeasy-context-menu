@@ -1,6 +1,6 @@
 {
   "name": "eeeasy-context-menu",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "description": "context menu javascript library",
   "main": "contextMenu.js",
   "repository": {

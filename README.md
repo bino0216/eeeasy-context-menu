@@ -14,8 +14,8 @@ and all preparations are completed.
 
 # prepare
 first, attach style sheet.
-```html
-<link rel="stylesheet" href="contextMenu.css">
+```javascript
+require('eeeasy-context-menu/contextMenu.css');
 ```
 
 
@@ -24,6 +24,8 @@ only a few conditions are needed.
 
 1. decide a condition's kind.
 ```javascript
+import ContextMenu from 'eeeasy-context-menu'
+
 const contextMenu = new ContextMenu({
     allowClassName: 'context-access' // it is default status.
 });
