@@ -49,7 +49,7 @@ Finally, should to add option.
 ```javascript
 const contextMenu = new ContextMenu();
 contextMenu.addOptions('square', [
-    // optionName, callBack
+    // optionClassName, callBack
     ['alert', () => {
         alert('!');
     }],
