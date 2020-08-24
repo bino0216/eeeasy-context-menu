@@ -13,6 +13,12 @@ when you declare new contextMenu object, context menu created body tag's last on
 and all preparations are completed.
 
 # prepare
+first, attach style sheet.
+```html
+<link rel="stylesheet" href="contextMenu.css">
+```
+
+
 but context-menu does not appear everywhere.
 only a few conditions are needed.
 

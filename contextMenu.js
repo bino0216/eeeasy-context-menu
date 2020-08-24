@@ -4,7 +4,7 @@
  * context menu
  * 
  */
-function ContextMenu(v = {
+export default function ContextMenu(v = {
     allowClassName: 'context-access'
     // allowAttributeName: 'data-context-access',
 })
