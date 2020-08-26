@@ -13,7 +13,12 @@ when you declare new contextMenu object, context menu created body tag's last on
 and all preparations are completed.
 
 # prepare
-first, attach style sheet.
+first, download a package
+```shell
+npm i --save eeeasy-context-menu
+```
+
+and attach default style sheet.
 ```javascript
 require('eeeasy-context-menu/contextMenu.css');
 ```
