@@ -3,7 +3,6 @@ export default function ContextMenu(v = {
     // allowAttributeName: 'data-context-access',
 })
 {
-    console.log('sival')
     const menuIdName = 'context-menu-el';
     let contextMenuElement = undefined; // menu element
 
